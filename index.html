@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linear regression in Shiny</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Linear regression in Shiny">
+  <meta name="author" content="Miguel Duarte">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Linear regression in Shiny</h1>
+    <h2>Applied example with mtcars dataset</h2>
+    <p>Miguel Duarte<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What is this Shiny app?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This Shiny app (<a href="https://injemaster83.shinyapps.io/Assignment">https://injemaster83.shinyapps.io/Assignment</a>) helps to estimate the best linear model which predicts the miles per gallon in the Motor Trend Car Road Tests (mtcars dataset). </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How does this app work?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the left panel, there are 10 predictors you can choose to fit the model (Cylinders, Displacement, Gross horsepower, Rear axle ratio, Weight, Quarter-mile time, V/S and Transmission).<br>
+After you choose, press the &quot;Estimate model&quot; button at the bottom of the left panel. You will see the following results:</p>
+
+<ol>
+<li>Predicted versus observed values plot</li>
+<li>Coefficients of the regression</li>
+<li>Residual plots</li>
+<li>R<sup>2</sup></li>
+<li>Variance Inflation Factor (VIF)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>How does this app work?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Example:</p>
+
+<pre><code class="r">data(mtcars)
+fit &lt;- lm(mpg ~ am + hp, mtcars)
+plot(x=predict(fit,mtcars),y=mtcars$mpg,xlab=&quot;Predicted mpg&quot;,ylab=&quot;Observed mpg&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<p>In the app, this piece of code is generated interactively by just selecting &quot;am&quot; and &quot;hp&quot; in the left panel.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Benefits</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This simple but powerful app allows you to interactively select the best linear model for the mtcars dataset with <strong>just few clicks</strong>!<br>
+You have all the relevant information in just one view, and any changes you make are updated instantly just pressing the &quot;Estimate model&quot; button.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What is this Shiny app?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How does this app work?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='How does this app work?'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Benefits'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
