@@ -32,6 +32,9 @@
     
     <!-- LOGO SLIDE -->
         <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/shiny.png">
+  </aside>
   <hgroup class="auto-fadein">
     <h1>Linear regression in Shiny</h1>
     <h2>Applied example with mtcars dataset</h2>
@@ -49,11 +52,13 @@
   <article data-timings="">
     <p>This Shiny app (<a href="https://injemaster83.shinyapps.io/Assignment">https://injemaster83.shinyapps.io/Assignment</a>) helps to estimate the best linear model which predicts the miles per gallon in the Motor Trend Car Road Tests (mtcars dataset). </p>
 
+<p><img src="./assets/img/app.png" alt="width"></p>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-2" style="background:#CBE7A5;">
   <hgroup>
     <h2>How does this app work?</h2>
   </hgroup>
@@ -73,12 +78,12 @@ After you choose, press the &quot;Estimate model&quot; button at the bottom of t
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-3" style="background:#CBE7A5;">
   <hgroup>
     <h2>How does this app work?</h2>
   </hgroup>
   <article data-timings="">
-    <p>Example:</p>
+    <p>Example: Plot with predicted vs. observed values</p>
 
 <pre><code class="r">data(mtcars)
 fit &lt;- lm(mpg ~ am + hp, mtcars)
@@ -93,13 +98,15 @@ plot(x=predict(fit,mtcars),y=mtcars$mpg,xlab=&quot;Predicted mpg&quot;,ylab=&quo
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="class" id="id" style="background:;">
+<slide class="" id="slide-4" style="background:#CBE7A5;">
   <hgroup>
     <h2>Benefits</h2>
   </hgroup>
   <article data-timings="">
     <p>This simple but powerful app allows you to interactively select the best linear model for the mtcars dataset with <strong>just few clicks</strong>!<br>
 You have all the relevant information in just one view, and any changes you make are updated instantly just pressing the &quot;Estimate model&quot; button.</p>
+
+<p><img src="./assets/img/cool.jpg" alt="width"></p>
 
   </article>
   <!-- Presenter Notes -->

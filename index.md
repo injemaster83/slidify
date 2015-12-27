@@ -1,21 +1,24 @@
----
+--- 
 title       : Linear regression in Shiny
 subtitle    : Applied example with mtcars dataset
 author      : Miguel Duarte
 job         : 
+logo        : shiny.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
 widgets     : [interactive, shiny]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
----
+--- 
 
 ## What is this Shiny app?
 
 This Shiny app (https://injemaster83.shinyapps.io/Assignment) helps to estimate the best linear model which predicts the miles per gallon in the Motor Trend Car Road Tests (mtcars dataset). 
 
---- .class #id 
+![width](./assets/img/app.png)
+
+--- bg:#CBE7A5 
 
 ## How does this app work?
 
@@ -28,11 +31,11 @@ After you choose, press the "Estimate model" button at the bottom of the left pa
 4. R^2
 5. Variance Inflation Factor (VIF)
 
---- .class #id
+--- bg:#CBE7A5
 
 ## How does this app work?
 
-Example:
+Example: Plot with predicted vs. observed values
 
 
 ```r
@@ -45,12 +48,14 @@ plot(x=predict(fit,mtcars),y=mtcars$mpg,xlab="Predicted mpg",ylab="Observed mpg"
 
 In the app, this piece of code is generated interactively by just selecting "am" and "hp" in the left panel.
 
---- .class #id
+--- bg:#CBE7A5
 
 ## Benefits
 
 This simple but powerful app allows you to interactively select the best linear model for the mtcars dataset with **just few clicks**!  
 You have all the relevant information in just one view, and any changes you make are updated instantly just pressing the "Estimate model" button.
+
+![width](./assets/img/cool.jpg)
 
 
 
